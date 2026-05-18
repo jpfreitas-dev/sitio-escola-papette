@@ -23,7 +23,7 @@
   box-shadow: var(--shadow);
 }
 
-.nav-inner {
+.navbar .nav-inner {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
@@ -34,17 +34,17 @@
   gap: 16px;
 }
 
-.logo {
+.navbar .logo {
   display: flex;
   align-items: center;
   gap: 10px;
   flex-shrink: 0;
 }
 
-.logo-icon {
+.navbar .logo-icon {
   width: 42px;
   height: 42px;
-  background: var(--red);
+  background: url("../assets/logo-papette.png") center/contain no-repeat;
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -53,34 +53,11 @@
   overflow: hidden;
 }
 
-.logo-icon::before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 14px;
-  background: var(--green);
-  border-radius: 0 0 6px 6px;
-}
-
-.logo-icon::after {
-  content: '';
-  position: absolute;
-  bottom: 6px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 16px;
-  height: 20px;
-  background: var(--white);
-  border-radius: 50% 50% 0 0;
-}
-
-.logo-text {
+.navbar .logo-text {
   line-height: 1;
 }
 
-.logo-text strong {
+.navbar .logo-text strong {
   display: block;
   font-family: 'Playfair Display', serif;
   font-size: 1.1rem;
@@ -88,19 +65,20 @@
   color: var(--red);
 }
 
-.logo-text span {
+.navbar .logo-text span {
   font-size: .72rem;
   color: var(--text-muted);
   letter-spacing: .06em;
 }
 
-.nav-links {
-  display: flex;
+/* Mobile-first: hide desktop links, show hamburger */
+.navbar .nav-links {
+  display: none;
   align-items: center;
   gap: 4px;
 }
 
-.nav-links a {
+.navbar .nav-links a {
   font-size: .88rem;
   font-weight: 500;
   color: var(--text-muted);
@@ -109,18 +87,18 @@
   transition: all .2s;
 }
 
-.nav-links a:hover {
+.navbar .nav-links a:hover {
   color: var(--red);
   background: var(--red-light);
 }
 
-.nav-right {
+.navbar .nav-right {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.btn-cta {
+.navbar .btn-cta {
   background: var(--yellow);
   color: var(--gray-900);
   font-size: .88rem;
@@ -131,13 +109,13 @@
   white-space: nowrap;
 }
 
-.btn-cta:hover {
+.navbar .btn-cta:hover {
   background: var(--yellow-dark);
   transform: translateY(-1px);
   box-shadow: 0 4px 16px rgba(245, 158, 11, .4);
 }
 
-.theme-toggle {
+.navbar .theme-toggle {
   width: 36px;
   height: 36px;
   border-radius: 50%;
@@ -151,12 +129,12 @@
   cursor: pointer;
 }
 
-.theme-toggle:hover {
+.navbar .theme-toggle:hover {
   background: var(--border);
 }
 
-.hamburger {
-  display: none;
+.navbar .hamburger {
+  display: flex;
   flex-direction: column;
   gap: 5px;
   width: 36px;
@@ -166,7 +144,7 @@
   cursor: pointer;
 }
 
-.hamburger span {
+.navbar .hamburger span {
   display: block;
   width: 22px;
   height: 2px;
@@ -175,19 +153,19 @@
   transition: all .3s;
 }
 
-.hamburger.open span:nth-child(1) {
+.navbar .hamburger.open span:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
 }
 
-.hamburger.open span:nth-child(2) {
+.navbar .hamburger.open span:nth-child(2) {
   opacity: 0;
 }
 
-.hamburger.open span:nth-child(3) {
+.navbar .hamburger.open span:nth-child(3) {
   transform: translateY(-7px) rotate(-45deg);
 }
 
-.mobile-menu {
+.navbar .mobile-menu {
   display: none;
   position: fixed;
   top: var(--navbar-h);
@@ -202,11 +180,11 @@
   box-shadow: var(--shadow-lg);
 }
 
-.mobile-menu.open {
+.navbar .mobile-menu.open {
   display: flex;
 }
 
-.mobile-menu a {
+.navbar .mobile-menu a {
   font-size: 1rem;
   font-weight: 500;
   color: var(--text);
@@ -215,12 +193,54 @@
   transition: all .2s;
 }
 
-.mobile-menu a:hover {
+.navbar .mobile-menu a:hover {
   background: var(--bg-alt);
   color: var(--red);
 }
 
-.mobile-menu .btn-cta {
+.navbar .mobile-menu .btn-cta {
   text-align: center;
   margin-top: 8px;
+}
+
+/* Desktop: show full nav, hide hamburger */
+@media (min-width: 768px) {
+  .navbar .nav-links {
+    display: flex;
+  }
+
+  .navbar .hamburger {
+    display: none;
+  }
+
+  .btn-cta.desktop-only {
+    display: inline-block;
+  }
+}
+
+@media (min-width: 1160px) {
+  .navbar .nav-inner {
+    padding: 0 24px;
+  }
+
+  .navbar .nav-links {
+    gap: 4px;
+    flex-wrap: nowrap;
+  }
+
+  .navbar .nav-links a {
+    padding: 6px 12px;
+    font-size: .88rem;
+  }
+
+  .btn-cta.desktop-only {
+    display: inline-block;
+  }
+}
+
+/* Preserve mobile tweaks from global.css */
+@media (max-width: 768px) {
+  .btn-cta.desktop-only {
+    display: none;
+  }
 }
