@@ -143,3 +143,38 @@ document.querySelectorAll('.pilar-card').forEach(card => {
     card.style.transform = '';
   });
 });
+
+/* ── Hero badges on mobile ─────────────────────────────────── */
+const heroBadge = document.getElementById('heroBadge1');
+const heroBadgeQuery = window.matchMedia('(max-width: 767px)');
+
+function syncHeroBadgeState() {
+  if (!heroBadge) return;
+
+  if (heroBadgeQuery.matches) {
+    heroBadge.classList.add('is-collapsed');
+    heroBadge.classList.remove('is-expanded');
+    heroBadge.setAttribute('aria-expanded', 'false');
+  } else {
+    heroBadge.classList.remove('is-collapsed', 'is-expanded');
+    heroBadge.setAttribute('aria-expanded', 'false');
+  }
+}
+
+syncHeroBadgeState();
+
+if (heroBadge) {
+  heroBadge.addEventListener('click', () => {
+    if (!heroBadgeQuery.matches) return;
+
+    const isExpanded = heroBadge.classList.toggle('is-expanded');
+    heroBadge.classList.toggle('is-collapsed', !isExpanded);
+    heroBadge.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
+  });
+}
+
+if (heroBadgeQuery.addEventListener) {
+  heroBadgeQuery.addEventListener('change', syncHeroBadgeState);
+} else if (heroBadgeQuery.addListener) {
+  heroBadgeQuery.addListener(syncHeroBadgeState);
+}

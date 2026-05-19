@@ -32,7 +32,7 @@
   & .hero-inner {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 64px;
+    gap: 58px;
     align-items: center;
     min-height: calc(100vh - var(--navbar-h));
     padding: 60px 0;
@@ -163,6 +163,7 @@
     bottom: 24px;
     left: 24px;
     background: var(--bg);
+    border: 0;
     border-radius: var(--radius);
     padding: 14px 18px;
     box-shadow: var(--shadow-lg);
@@ -170,6 +171,8 @@
     align-items: center;
     gap: 12px;
     animation: float 3s ease-in-out infinite;
+    cursor: pointer;
+    text-align: left;
   }
 
   & .hero-img-badge-icon {
@@ -276,14 +279,70 @@
     right: 12px;
   }
 
+  #inicio .hero-img-badge {
+    left: 16px;
+    bottom: 16px;
+  }
+
+  #inicio .hero-img-badge.is-collapsed {
+    width: 56px;
+    height: 56px;
+    padding: 0;
+    border-radius: 16px;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  #inicio .hero-img-badge.is-collapsed > div:last-child {
+    display: none;
+  }
+
+  #inicio .hero-img-badge.is-collapsed .hero-img-badge-icon {
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+  }
+
+  #inicio .hero-img-badge.is-expanded {
+    max-width: min(260px, calc(100% - 32px));
+  }
+
+  #inicio .hero-img-badge.is-expanded > div:last-child {
+    display: block;
+  }
+
+  #inicio .hero-img-badge2 {
+    top: 14px;
+    right: 8px;
+    padding: 10px 12px;
+    font-size: .74rem;
+    transform: scale(.92);
+    transform-origin: top right;
+  }
+
   #inicio .hero-stats {
     gap: 20px;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 470px) {
+  #inicio .hero-badge {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
   #inicio .hero-actions {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  #inicio .hero-actions .btn-hero,
+  #inicio .hero-actions .btn-hero-ghost {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
   }
 }
