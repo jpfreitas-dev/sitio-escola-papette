@@ -49,14 +49,24 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 20px;
-    font-size: 1.6rem;
-    color: var(--red);
+    overflow: hidden;
     transition: all .3s;
+    padding: 10px;
+  }
+
+  & .pilar-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
   }
 
   & .pilar-card:hover .pilar-icon {
     background: var(--red);
-    color: #fff;
+  }
+
+  & .pilar-card:hover .pilar-icon img {
+    transform: scale(1.04);
   }
 
   & .pilar-card h3 {
@@ -261,7 +271,7 @@
     align-items: start;
   }
 
-  & .map-area {
+  & .reveal-left {
     background: var(--bg-alt);
     border-radius: var(--radius-lg);
     overflow: hidden;
@@ -270,10 +280,13 @@
     border: 1px solid var(--border);
   }
 
-  & .map-svg {
+  & .reveal-left img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
+    display: block;
   }
+
 
   & .bairros-list {
     display: flex;
@@ -294,15 +307,15 @@
   }
 
   & .bairro-item:hover {
-    background: var(--red-light);
-    border-color: var(--red);
+    background: var(--yellow-light);
+    border-color: var(--yellow);
   }
 
   & .bairro-dot {
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background: var(--red);
+    background: var(--yellow);
     flex-shrink: 0;
   }
 
@@ -397,7 +410,7 @@
     text-align: center;
     margin-top: 48px;
     font-size: .95rem;
-    color: var(--red);
+    color: var(--yellow);
     font-weight: 600;
     cursor: pointer;
   }
@@ -434,7 +447,7 @@
     content: '"';
     font-family: 'Playfair Display', serif;
     font-size: 5rem;
-    color: var(--red);
+    color: var(--yellow);
     opacity: .15;
     position: absolute;
     top: 8px;
@@ -467,12 +480,12 @@
     width: 46px;
     height: 46px;
     border-radius: 50%;
-    background: var(--red-light);
+    background: var(--yellow-light);
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 700;
-    color: var(--red);
+    color: var(--yellow);
     font-size: .95rem;
     flex-shrink: 0;
   }
@@ -511,9 +524,9 @@
   }
 
   & .depo-btn:hover {
-    background: var(--red);
+    background: var(--yellow);
     color: #fff;
-    border-color: var(--red);
+    border-color: var(--yellow);
   }
 
   & .depo-dots {
@@ -531,7 +544,7 @@
   }
 
   & .depo-dot.active {
-    background: var(--red);
+    background: var(--yellow);
     width: 24px;
     border-radius: 4px;
   }
@@ -563,7 +576,7 @@
   }
 
   & .faq-item.open {
-    border-color: var(--red);
+    border-color: var(--yellow);
   }
 
   & .faq-question {
@@ -595,7 +608,7 @@
   }
 
   & .faq-item.open .faq-toggle {
-    background: var(--red);
+    background: var(--yellow);
     color: #fff;
     transform: rotate(45deg);
   }
@@ -615,7 +628,7 @@
   }
 
   & .faq-cta-box {
-    background: var(--red);
+    background: var(--yellow);
     border-radius: var(--radius-lg);
     padding: 40px;
     color: #fff;
@@ -637,7 +650,7 @@
 
   & .btn-white {
     background: #fff;
-    color: var(--red);
+    color: var(--yellow);
     font-weight: 700;
     font-size: .95rem;
     padding: 13px 26px;
@@ -650,6 +663,21 @@
     background: var(--yellow);
     color: var(--gray-900);
   }
+}
+
+.section-more {
+  display: inline-block;
+  margin-top: 32px;
+  color: var(--red);
+  font-size: .96rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: opacity .2s ease, transform .2s ease;
+}
+
+.section-more:hover {
+  transform: translateX(3px);
+  opacity: .85;
 }
 
 /* Responsive rules moved from global.css */
