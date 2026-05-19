@@ -294,7 +294,8 @@
     overflow: hidden;
   }
 
-  #inicio .hero-img-badge.is-collapsed>div:last-child {
+  
+  #inicio .hero-img-badge.is-collapsed > div:last-child {
     display: none;
   }
 
