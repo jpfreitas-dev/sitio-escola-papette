@@ -11,7 +11,7 @@
 .parallax-bg {
   position: absolute;
   inset: -80px 0;
-  background: url('https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1400&q=80') center/cover no-repeat;
+  background: url('../assets/workers.jpg') center 20%/cover no-repeat;
   will-change: transform;
 }
 
@@ -51,7 +51,7 @@
 }
 
 .parallax-red .parallax-bg {
-  background-image: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1400&q=80');
+  background: url('../assets/workers.jpg') center 20%/cover no-repeat;
 }
 
 /* ── Parallax Banner 3 ──────────────────────────────────────── */
@@ -60,7 +60,7 @@
 }
 
 .parallax-yellow .parallax-bg {
-  background-image: url('https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=1400&q=80');
+  background: url('../assets/workers.jpg') center 20%/cover no-repeat;
 }
 
 @media (max-width: 768px) {
