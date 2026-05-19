@@ -99,7 +99,7 @@ h4 {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 48px;
 }
 
 .section-tag {
@@ -211,5 +211,11 @@ section {
 
   100% {
     background-position: 200% center;
+  }
+}
+
+@media (max-width: 550px) {
+  .container {
+    padding: 0 24px;
   }
 }
