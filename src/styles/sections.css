@@ -939,7 +939,7 @@
     display: grid;
     grid-template-columns: 1fr 1.2fr;
     gap: 80px;
-    align-items: start;
+    align-items: center;
     margin-top: 56px;
   }
 
@@ -1010,12 +1010,10 @@
   }
 
   & .faq-cta-box {
-    background: var(--yellow);
+    background: var(--red);
     border-radius: var(--radius-lg);
     padding: 40px;
     color: #fff;
-    position: sticky;
-    top: 100px;
   }
 
   & .faq-cta-box h3 {
@@ -1053,6 +1051,8 @@
 
     & .faq-cta-box {
       position: static;
+      top: auto;
+      transform: none;
     }
   }
 

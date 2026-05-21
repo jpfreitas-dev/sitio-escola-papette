@@ -89,17 +89,14 @@ let cardW = 0;
 
 function getCardW() {
   if (!cards[0]) return 0;
-  const gap = 24;
-  const isMob = window.innerWidth < 768;
-  const isMed = window.innerWidth < 1024;
-  const pct = isMob ? 0.85 : isMed ? 0.5 : 0.333;
-  return (track.parentElement.offsetWidth * pct);
+  const gap = parseFloat(getComputedStyle(track).gap) || 24;
+  return cards[0].getBoundingClientRect().width + gap;
 }
 
 function goTo(idx) {
   cardW = getCardW();
   current = Math.max(0, Math.min(idx, cards.length - 1));
-  track.style.transform = `translateX(-${current * (cardW + 24)}px)`;
+  track.style.transform = `translateX(-${current * cardW - 5}px)`;
   dots.forEach((d, i) => d.classList.toggle('active', i === current));
 }
 
