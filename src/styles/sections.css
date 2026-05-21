@@ -635,7 +635,7 @@
 
   & .ativ-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     margin-top: 48px;
   }
@@ -646,6 +646,9 @@
     overflow: hidden;
     border: 1px solid var(--border);
     transition: all .35s;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
   }
 
   & .ativ-card:hover {
@@ -659,28 +662,22 @@
   }
 
   & .ativ-card:nth-child(1) .ativ-img {
-    background: url('https://images.unsplash.com/photo-1547347298-4074fc3086f0?w=500&q=80') center/cover;
+    background: url('../assets/atividades-complementares/futebol.jpg') center/cover;
   }
 
   & .ativ-card:nth-child(2) .ativ-img {
-    background: url('https://images.unsplash.com/photo-1545959570-a94084071b5d?w=500&q=80') center/cover;
+    background: url('../assets/atividades-complementares/danca-jazz.jpg') center/cover;
   }
 
   & .ativ-card:nth-child(3) .ativ-img {
-    background: url('https://images.unsplash.com/photo-1484589065579-248aad0d8b13?w=500&q=80') center/cover;
-  }
-
-  & .ativ-card:nth-child(4) .ativ-img {
-    background: url('https://images.unsplash.com/photo-1555680202-c86f0e12f086?w=500&q=80') center/cover;
+    background: url('../assets/atividades-complementares/informatica.jpg') center/cover;
   }
 
   & .ativ-body {
     padding: 22px 20px;
-  }
-
-  & .ativ-emoji {
-    font-size: 1.6rem;
-    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
   }
 
   & .ativ-body h4 {
@@ -691,9 +688,11 @@
 
   & .ativ-meta {
     display: flex;
-    flex-direction: column;
-    gap: 4px;
-    margin-top: 12px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: auto;
+    padding-top: 8px;
   }
 
   & .ativ-meta span {
@@ -702,6 +701,28 @@
     display: flex;
     align-items: center;
     gap: 6px;
+  }
+
+  & .ativ-badge {
+    width: fit-content;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: .75rem;
+    font-weight: 700;
+    line-height: 1.2;
+    border: 1px solid transparent;
+  }
+
+  & .ativ-badge.age {
+    background: var(--red-light);
+    color: var(--red-dark);
+    border-color: rgba(220, 38, 38, .15);
+  }
+
+  & .ativ-badge.days {
+    background: var(--yellow-light);
+    color: var(--yellow-dark);
+    border-color: rgba(245, 158, 11, .16);
   }
 
   & .ativ-cta {
@@ -721,12 +742,54 @@
   @media (max-width: 1024px) {
     & .ativ-grid {
       grid-template-columns: repeat(2, 1fr);
+      justify-items: center;
+    }
+
+    & .ativ-card {
+      width: 100%;
+      max-width: 420px;
+    }
+
+    & .ativ-grid>.ativ-card:nth-child(3) {
+      grid-column: 1 / -1;
+      justify-self: center;
+      max-width: 520px;
     }
   }
 
   @media (max-width: 768px) {
+
+    /* Mobile: make activities a horizontal snap carousel showing one card at a time */
     & .ativ-grid {
-      grid-template-columns: 1fr;
+      display: flex;
+      flex-direction: row;
+      gap: 16px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      padding: 12px 0;
+    }
+
+    & .ativ-grid::-webkit-scrollbar {
+      display: none;
+    }
+
+    & .ativ-grid {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    & .ativ-card {
+      flex: 0 0 100%;
+      min-width: 100%;
+      max-width: 100%;
+      scroll-snap-align: center;
+      margin: 0 auto;
+    }
+
+    & .ativ-body {
+      padding: 22px;
+      box-sizing: border-box;
     }
   }
 }
@@ -754,17 +817,7 @@
     position: relative;
   }
 
-  & .depo-card::before {
-    content: '"';
-    font-family: 'Playfair Display', serif;
-    font-size: 5rem;
-    color: var(--yellow);
-    opacity: .15;
-    position: absolute;
-    top: 8px;
-    left: 20px;
-    line-height: 1;
-  }
+  /* decorative quote removed per request */
 
   & .depo-stars {
     color: var(--yellow);
