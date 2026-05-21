@@ -399,6 +399,12 @@
     border: 1px solid var(--border);
   }
 
+  & .tech-logo img {
+    width: 100%;
+    height: 100%;
+    border-radius: var(--radius);
+  }
+
   & .tech-card-text strong {
     display: block;
     font-size: 1rem;
@@ -426,6 +432,59 @@
     & .tech-intro {
       grid-template-columns: 1fr;
       gap: 40px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    & .tech-intro>div:nth-child(1) {
+      text-align: center;
+
+      & p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+
+  @media (max-width: 500px) {
+    & .tech-card {
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      grid-template-areas:
+        "logo title"
+        "text text"
+        "badge badge";
+      column-gap: 14px;
+      row-gap: 10px;
+      align-items: start;
+    }
+
+    & .tech-logo {
+      grid-area: logo;
+    }
+
+    & .tech-card-text {
+      display: contents;
+    }
+
+    & .tech-card-text strong {
+      grid-area: title;
+      margin: 0;
+      align-self: center;
+      text-align: left;
+    }
+
+    & .tech-card-text p {
+      grid-area: text;
+      margin: 0;
+      text-align: left;
+    }
+
+    & .tech-badge {
+      grid-area: badge;
+      margin-top: 0;
+      justify-self: start;
+      text-align: left;
     }
   }
 }
