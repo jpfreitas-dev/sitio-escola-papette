@@ -132,6 +132,110 @@ h4 {
   max-width: 560px;
 }
 
+.text-muted-sm {
+  font-size: .88rem;
+  color: var(--text-muted);
+}
+
+.section-intro {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.section-intro--640 {
+  max-width: 640px;
+}
+
+.section-intro--600 {
+  max-width: 600px;
+}
+
+.section-intro--560 {
+  max-width: 560px;
+}
+
+.section-intro--bottom-56 {
+  margin-bottom: 56px;
+}
+
+.section-actions {
+  text-align: center;
+}
+
+.section-viewport {
+  overflow: hidden;
+}
+
+.section-spacing-top {
+  margin-top: 20px;
+}
+
+.section-sub--340 {
+  max-width: 340px;
+}
+
+.ui-card {
+  border: 1px solid var(--border);
+  transition: all var(--transition);
+}
+
+.ui-card--surface {
+  background: var(--bg);
+}
+
+.ui-card--surface-alt {
+  background: var(--bg-alt);
+}
+
+.ui-card--radius {
+  border-radius: var(--radius);
+}
+
+.ui-card--radius-lg {
+  border-radius: var(--radius-lg);
+}
+
+.ui-card--clip {
+  overflow: hidden;
+}
+
+.ui-card--relative {
+  position: relative;
+}
+
+.ui-cta {
+  background: var(--yellow);
+  color: var(--gray-900);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-weight: 600;
+  border-radius: 100px;
+  transition: all .2s;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.ui-cta:hover {
+  background: var(--yellow-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(245, 158, 11, .4);
+}
+
+.ui-cta .cta-whatsapp-icon {
+  width: 25px;
+  height: 25px;
+  min-width: 25px;
+  min-height: 25px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.ui-cta span {
+  line-height: 1;
+}
+
 section {
   padding: 100px 0;
 }

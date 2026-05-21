@@ -23,7 +23,7 @@
   <nav class="navbar" id="navbar">
     <div class="nav-inner">
       <a class="logo" href="#inicio">
-        <div class="logo-icon"></div>
+        <img class="logo-icon" src="./src/assets/logo-papette.png" alt="Logo Sítio Escola Papette">
         <div class="logo-text">
           <strong>Sítio Escola Papette</strong>
           <span>Desde 1986 • Nova Friburgo/RJ</span>
@@ -40,7 +40,7 @@
       </div>
       <div class="nav-right">
         <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">🌙</button>
-        <a class="btn-cta desktop-only" href="https://wa.me/5522999999999" target="_blank">
+        <a class="btn-cta ui-cta desktop-only" href="https://wa.me/5522999999999" target="_blank">
           <span>Agendar Visita</span>
         </a>
         <div class="hamburger" id="hamburger" aria-label="Menu" role="button" tabindex="0">
@@ -59,7 +59,7 @@
     <a href="#transporte" class="mob-link">Transporte</a>
     <a href="#atividades" class="mob-link">Atividades</a>
     <a href="#duvidas" class="mob-link">Dúvidas</a>
-    <a class="btn-cta" href="https://wa.me/5522999999999" target="_blank">
+    <a class="btn-cta ui-cta" href="https://wa.me/5522999999999" target="_blank">
       <img class="cta-whatsapp-icon" src="./src/assets/whatsapp.png" alt="WhatsApp">
       <span>Agendar Visita no WhatsApp</span>
     </a>
@@ -100,7 +100,7 @@
         <div class="hero-img-wrap reveal-right">
           <div class="hero-dot"></div>
           <div class="hero-img">
-            <div class="hero-img-inner"></div>
+            <img class="hero-img-inner" src="./src/assets/hero/hero-image.png" alt="Crianças em atividade no Sítio Escola Papette">
           </div>
           <button class="hero-img-badge" id="heroBadge1" type="button" aria-expanded="false"
             aria-label="Abrir informações sobre aprendizado vivo">
@@ -118,7 +118,9 @@
 
   <!-- ══════════ PARALLAX BANNER 1 ══════════ -->
   <div class="parallax-banner" id="parallax1">
-    <div class="parallax-bg" id="pb1"></div>
+    <div class="parallax-bg" id="pb1">
+      <img class="parallax-img" src="./src/assets/workers.jpg" alt="Atividades ao ar livre na escola">
+    </div>
     <div class="parallax-overlay"></div>
     <div class="parallax-content reveal">
       <blockquote>"Diga-me e eu esqueço, ensine-me e eu recordo, envolva-me e eu aprendo."</blockquote>
@@ -129,14 +131,14 @@
   <!-- ══════════ FILOSOFIA ══════════ -->
   <section id="filosofia">
     <div class="container">
-      <div class="reveal" style="text-align:center; max-width:640px; margin:0 auto 0;">
+      <div class="reveal section-intro section-intro--640">
         <span class="section-tag">Nossa Filosofia</span>
         <h2 class="section-title">Três <span>pilares</span> que guiam nossa proposta pedagógica</h2>
         <p class="section-sub">Uma escola que vai além do conteúdo curricular — formamos seres humanos completos,
           críticos e apaixonados pelo aprender.</p>
       </div>
       <div class="filosofia-grid">
-        <div class="pilar-card reveal delay-1">
+        <div class="pilar-card reveal delay-1 ui-card ui-card--surface ui-card--radius-lg ui-card--clip ui-card--relative">
           <div class="pilar-icon">
             <img src="./src/assets/filosofia/family.png" alt="Escola Família">
           </div>
@@ -144,7 +146,7 @@
           <p>Um ambiente acolhedor onde cada criança é conhecida pelo nome, pelos sonhos e pelas dificuldades. A
             parceria família-escola é o coração da nossa prática pedagógica.</p>
         </div>
-        <div class="pilar-card reveal delay-2">
+        <div class="pilar-card reveal delay-2 ui-card ui-card--surface ui-card--radius-lg ui-card--clip ui-card--relative">
           <div class="pilar-icon">
             <img src="./src/assets/filosofia/overpopulation.png" alt="Desenvolvimento Cidadão">
           </div>
@@ -152,7 +154,7 @@
           <p>Projetos interdisciplinares que conectam o aluno à sua comunidade, estimulando o senso crítico, a empatia e
             a responsabilidade com o meio ambiente e com o próximo.</p>
         </div>
-        <div class="pilar-card reveal delay-3">
+        <div class="pilar-card reveal delay-3 ui-card ui-card--surface ui-card--radius-lg ui-card--clip ui-card--relative">
           <div class="pilar-icon">
             <img src="./src/assets/filosofia/knowledge.png" alt="Formação Autônoma">
           </div>
@@ -161,7 +163,7 @@
             criatividade e a habilidade de aprender a aprender.</p>
         </div>
       </div>
-      <div style="text-align:center;">
+      <div class="section-actions">
         <a class="section-more" href="https://wa.me/5522999999999" target="_blank">Saiba mais -></a>
       </div>
     </div>
@@ -175,47 +177,47 @@
           <span class="section-tag">Infraestrutura</span>
           <h2 class="section-title">Espaços <span>vivos</span> para<br> aprender e se desenvolver</h2>
         </div>
-        <p class="section-sub reveal-right" style="max-width:340px;">Cada espaço do nossa escola foi pensado para
+        <p class="section-sub section-sub--340 reveal-right">Cada espaço do nossa escola foi pensado para
           estimular o corpo, a mente e a criatividade.</p>
       </div>
       <div class="infra-grid reveal">
-        <div class="infra-card">
-          <div class="infra-img"></div>
+        <div class="infra-card ui-card ui-card--surface-alt ui-card--radius-lg ui-card--clip ui-card--relative">
+          <img class="infra-img" src="./src/assets/infraestrutura/campo-de-futebol.png" alt="Campo de Futebol">
           <div class="infra-overlay">
             <h4>Campo de Futebol</h4>
             <p>O lugar perfeito para correr, jogar com os amigos e gastar energia.</p>
           </div>
         </div>
-        <div class="infra-card">
-          <div class="infra-img"></div>
+        <div class="infra-card ui-card ui-card--surface-alt ui-card--radius-lg ui-card--clip ui-card--relative">
+          <img class="infra-img" src="./src/assets/infraestrutura/horta.jpg" alt="Horta">
           <div class="infra-overlay">
             <h4>Horta</h4>
             <p>Colocar a mão na terra e ver a vida crescer de perto!</p>
           </div>
         </div>
-        <div class="infra-card">
-          <div class="infra-img"></div>
+        <div class="infra-card ui-card ui-card--surface-alt ui-card--radius-lg ui-card--clip ui-card--relative">
+          <img class="infra-img" src="./src/assets/infraestrutura/parquinho.png" alt="Parquinho">
           <div class="infra-overlay">
             <h4>Parquinho</h4>
             <p>O coração da diversão e das risadas!</p>
           </div>
         </div>
-        <div class="infra-card">
-          <div class="infra-img"></div>
+        <div class="infra-card ui-card ui-card--surface-alt ui-card--radius-lg ui-card--clip ui-card--relative">
+          <img class="infra-img" src="./src/assets/infraestrutura/sala-de-artes.png" alt="Sala de artes">
           <div class="infra-overlay">
             <h4>Sala de artes</h4>
             <p>Tinta, expressão e muita criatividade!</p>
           </div>
         </div>
-        <div class="infra-card">
-          <div class="infra-img"></div>
+        <div class="infra-card ui-card ui-card--surface-alt ui-card--radius-lg ui-card--clip ui-card--relative">
+          <img class="infra-img" src="./src/assets/infraestrutura/sala-de-danca.png" alt="Sala de Jazz e dança">
           <div class="infra-overlay">
             <h4>Sala de Jazz (Dança)</h4>
             <p>Música, ritmo e muita energia!</p>
           </div>
         </div>
       </div>
-      <div style="text-align:center;">
+      <div class="section-actions">
         <a class="section-more" href="https://wa.me/5522999999999" target="_blank">Saiba mais -></a>
       </div>
     </div>
@@ -223,7 +225,9 @@
 
   <!-- ══════════ PARALLAX BANNER 2 ══════════ -->
   <div class="parallax-banner parallax-red" id="parallax2">
-    <div class="parallax-bg" id="pb2"></div>
+    <div class="parallax-bg" id="pb2">
+      <img class="parallax-img" src="./src/assets/workers.jpg" alt="Alunos em experiência pedagógica">
+    </div>
     <div class="parallax-overlay"></div>
     <div class="parallax-content reveal">
       <blockquote>"A infância feliz é o alicerce de uma vida plena. Aqui, cada dia é uma aventura de descobertas."
@@ -243,7 +247,7 @@
             transparente e eficiente, sem perder o calor humano.</p>
         </div>
         <div class="tech-visual reveal-right">
-          <div class="tech-card">
+          <div class="tech-card ui-card ui-card--surface ui-card--radius-lg">
             <div class="tech-logo">
               <img src="./src/assets/tecnologia/educarebox-logo.jpg" alt="Educarebox">
             </div>
@@ -253,7 +257,7 @@
               <span class="tech-badge">✓ Disponível no iOS e Android</span>
             </div>
           </div>
-          <div class="tech-card">
+          <div class="tech-card ui-card ui-card--surface ui-card--radius-lg">
             <div class="tech-logo">
               <img src="./src/assets/tecnologia/positivo.jpg" alt="Sistema Positivo de Ensino">
             </div>
@@ -263,7 +267,7 @@
               <span class="tech-badge">Tecnologia integrada aos estudos</span>
             </div>
           </div>
-          <div class="tech-card">
+          <div class="tech-card ui-card ui-card--surface ui-card--radius-lg">
             <div class="tech-logo">
               <img src="./src/assets/tecnologia/arvore-livros.jpg" alt="Árvore Livros">
             </div>
@@ -275,7 +279,7 @@
           </div>
         </div>
       </div>
-      <div style="text-align:center;">
+      <div class="section-actions">
         <a class="section-more" href="https://wa.me/5522999999999" target="_blank">Saiba mais -></a>
       </div>
     </div>
@@ -284,7 +288,7 @@
   <!-- ══════════ TRANSPORTE ══════════ -->
   <section id="transporte">
     <div class="container">
-      <div class="reveal" style="text-align:center; max-width:600px; margin:0 auto 56px;">
+      <div class="reveal section-intro section-intro--600 section-intro--bottom-56">
         <span class="section-tag">Transporte</span>
         <h2 class="section-title">Ônibus próprio com <span>segurança</span> e <span>conforto</span></h2>
         <p class="section-sub">3 Veículos, motoristas treinados e rotas planejadas para garantir tranquilidade
@@ -295,7 +299,7 @@
           <img src="./src/assets/transporte/bus.png" alt="Ônibus da Escola Papette">
         </div>
         <div class="reveal-right">
-          <h3 style="font-size:1.3rem; margin-bottom:20px;">Principais bairros atendidos</h3>
+          <h3 class="bairros-title">Principais bairros atendidos</h3>
           <div class="bairros-list">
             <div class="bairro-item">
               <div class="bairro-dot"></div><span>Centro</span>
@@ -322,7 +326,7 @@
           </div>
         </div>
       </div>
-      <div style="text-align:center;">
+      <div class="section-actions">
         <a class="section-more" href="https://wa.me/5522999999999" target="_blank">Saiba mais -></a>
       </div>
     </div>
@@ -331,18 +335,18 @@
   <!-- ══════════ ATIVIDADES ══════════ -->
   <section id="atividades">
     <div class="container">
-      <div class="reveal" style="text-align:center; max-width:600px; margin:0 auto 0;">
+      <div class="reveal section-intro section-intro--600">
         <span class="section-tag">Atividades Complementares</span>
         <h2 class="section-title">Muito além da <span>sala de aula</span></h2>
         <p class="section-sub">Atividades extracurriculares que desenvolvem talentos, disciplina, criatividade e saúde
           de forma integrada ao projeto pedagógico.</p>
       </div>
       <div class="ativ-grid">
-        <div class="ativ-card reveal delay-1">
-          <div class="ativ-img"></div>
+        <div class="ativ-card reveal delay-1 ui-card ui-card--surface ui-card--radius-lg ui-card--clip">
+          <img class="ativ-img" src="./src/assets/atividades-complementares/futebol.jpg" alt="Atividade complementar de futebol">
           <div class="ativ-body">
             <h4>Futebol</h4>
-            <p style="font-size:.88rem; color:var(--text-muted);">Treino em campo aberto, com bola, coordenação e espírito de equipe para desenvolver técnica, respeito e convivência.
+            <p class="text-muted-sm">Treino em campo aberto, com bola, coordenação e espírito de equipe para desenvolver técnica, respeito e convivência.
             </p>
             <div class="ativ-meta">
               <span class="ativ-badge age">6 a 15 anos</span>
@@ -350,11 +354,11 @@
             </div>
           </div>
         </div>
-        <div class="ativ-card reveal delay-2">
-          <div class="ativ-img"></div>
+        <div class="ativ-card reveal delay-2 ui-card ui-card--surface ui-card--radius-lg ui-card--clip">
+          <img class="ativ-img" src="./src/assets/atividades-complementares/danca-jazz.jpg" alt="Atividade complementar de dança jazz">
           <div class="ativ-body">
             <h4>Dança (Jazz)</h4>
-            <p style="font-size:.88rem; color:var(--text-muted);">Movimento, ritmo e expressão corporal em aulas dinâmicas que fortalecem postura, musicalidade e confiança.
+            <p class="text-muted-sm">Movimento, ritmo e expressão corporal em aulas dinâmicas que fortalecem postura, musicalidade e confiança.
             </p>
             <div class="ativ-meta">
               <span class="ativ-badge age">6 a 15 anos</span>
@@ -362,11 +366,11 @@
             </div>
           </div>
         </div>
-        <div class="ativ-card reveal delay-3">
-          <div class="ativ-img"></div>
+        <div class="ativ-card reveal delay-3 ui-card ui-card--surface ui-card--radius-lg ui-card--clip">
+          <img class="ativ-img" src="./src/assets/atividades-complementares/informatica.jpg" alt="Atividade complementar de informática">
           <div class="ativ-body">
             <h4>Informática</h4>
-            <p style="font-size:.88rem; color:var(--text-muted);">Letramento digital, noções de teclado, internet segura e uso criativo da tecnologia no dia a dia escolar.
+            <p class="text-muted-sm">Letramento digital, noções de teclado, internet segura e uso criativo da tecnologia no dia a dia escolar.
             </p>
             <div class="ativ-meta">
               <span class="ativ-badge age">6 a 15 anos</span>
@@ -375,7 +379,7 @@
           </div>
         </div>
       </div>
-      <div style="text-align:center;">
+      <div class="section-actions">
         <a class="section-more" href="https://wa.me/5522999999999" target="_blank">Saiba mais -></a>
       </div>
     </div>
@@ -383,7 +387,9 @@
 
   <!-- ══════════ PARALLAX BANNER 3 ══════════ -->
   <div class="parallax-banner parallax-yellow" id="parallax3">
-    <div class="parallax-bg" id="pb3"></div>
+    <div class="parallax-bg" id="pb3">
+      <img class="parallax-img" src="./src/assets/workers.jpg" alt="Vivência escolar em ambiente natural">
+    </div>
     <div class="parallax-overlay"></div>
     <div class="parallax-content reveal">
       <blockquote>"Venha visitar. Deixe seu filho correr descalço na grama e ver o mundo com outros olhos."</blockquote>
@@ -394,14 +400,14 @@
   <!-- ══════════ DEPOIMENTOS ══════════ -->
   <section id="depoimentos">
     <div class="container">
-      <div class="reveal" style="text-align:center; max-width:560px; margin:0 auto 0;">
+      <div class="reveal section-intro section-intro--560">
         <span class="section-tag">Depoimentos</span>
         <h2 class="section-title">O que dizem as <span>famílias</span></h2>
       </div>
       <div class="depo-wrap reveal">
-        <div style="overflow:hidden;">
+        <div class="section-viewport">
           <div class="depo-track" id="depoTrack">
-            <div class="depo-card">
+            <div class="depo-card ui-card ui-card--surface-alt ui-card--radius-lg ui-card--relative">
               <div class="depo-stars">★★★★★</div>
               <p class="depo-text">Meu filho mudou completamente depois que entrou na Papette. Ele voltou a gostar de
                 estudar e ainda fala o tempo todo sobre as atividades na natureza. É uma escola que realmente faz
@@ -414,7 +420,7 @@
                 </div>
               </div>
             </div>
-            <div class="depo-card">
+            <div class="depo-card ui-card ui-card--surface-alt ui-card--radius-lg ui-card--relative">
               <div class="depo-stars">★★★★★</div>
               <p class="depo-text">A comunicação com a escola é impecável. O aplicativo funciona muito bem e os
                 professores são sempre receptivos. Sinto que a Papette é uma extensão da nossa família — coisa rara de
@@ -427,7 +433,7 @@
                 </div>
               </div>
             </div>
-            <div class="depo-card">
+            <div class="depo-card ui-card ui-card--surface-alt ui-card--radius-lg ui-card--relative">
               <div class="depo-stars">★★★★★</div>
               <p class="depo-text">Quando vimos o espaço verde e a estrutura, não tivemos dúvida. Mas o que nos
                 conquistou mesmo foi o carinho dos professores. Nossa filha não quer ir embora quando passamos para
@@ -452,7 +458,7 @@
           </div>
         </div>
       </div>
-      <div style="text-align:center;">
+      <div class="section-actions">
         <a class="section-more" href="https://wa.me/5522999999999" target="_blank">Saiba mais -></a>
       </div>
     </div>
@@ -461,34 +467,34 @@
   <!-- ══════════ FAQ ══════════ -->
   <section id="duvidas">
     <div class="container">
-      <div class="reveal" style="text-align:center; max-width:560px; margin:0 auto 0;">
+      <div class="reveal section-intro section-intro--560">
         <span class="section-tag">Dúvidas Frequentes</span>
         <h2 class="section-title">Perguntas que <span>famílias</span> costumam fazer</h2>
       </div>
       <div class="faq-grid">
         <div class="faq-list reveal-left">
-          <div class="faq-item" data-faq>
+          <div class="faq-item ui-card ui-card--surface ui-card--radius ui-card--clip" data-faq>
             <div class="faq-question">
               <span>Qual é o prazo para alterar o itinerário de retorno do meu filho no ônibus escolar?</span>
               <div class="faq-toggle">+</div>
             </div>
             <div class="faq-answer">Para garantir a segurança dos estudantes e a organização das rotas, qualquer mudança pontual no itinerário de retorno deve ser comunicada diretamente à secretaria dentro dos horários limites oficiais. Para os alunos que estudam no turno da manhã, o aviso deve ser feito rigorosamente até as 10h30. Já para os alunos do turno da tarde, a comunicação deve ocorrer até as 16h30. Fora desses horários, a frota seguirá a rota padrão previamente cadastrada.</div>
           </div>
-          <div class="faq-item" data-faq>
+          <div class="faq-item ui-card ui-card--surface ui-card--radius ui-card--clip" data-faq>
             <div class="faq-question">
               <span>Qual é o procedimento para que outra pessoa ou o próprio aluno saia mais cedo da escola?</span>
               <div class="faq-toggle">+</div>
             </div>
             <div class="faq-answer">Os protocolos de segurança da instituição são rígidos para a retirada antecipada de qualquer estudante. É obrigatório que os responsáveis emitam uma autorização expressa informando o colégio com antecedência. Essa autorização pode ser realizada por meio de uma anotação assinada na agenda física ou através de um contato telefônico oficial diretamente com a secretaria, indicando o nome e o documento de quem irá retirar o aluno.</div>
           </div>
-          <div class="faq-item" data-faq>
+          <div class="faq-item ui-card ui-card--surface ui-card--radius ui-card--clip" data-faq>
             <div class="faq-question">
               <span>Meu filho pode levar e utilizar o telefone celular dentro da sala de aula?</span>
               <div class="faq-toggle">+</div>
             </div>
             <div class="faq-answer">Visando manter a atenção cognitiva, o foco pedagógico e a interação social saudável, é proibido o uso de telefones celulares ou dispositivos eletrônicos pessoais em sala de aula. O uso só é permitido quando houver uma indicação pedagógica prévia e específica coordenada pelo professor para alguma atividade letiva. Caso os pais precisem realizar um contato de emergência com o aluno durante o horário de aula, o canal direto deve ser feito através da telefonia fixa ou do celular da secretaria.</div>
           </div>
-          <div class="faq-item" data-faq>
+          <div class="faq-item ui-card ui-card--surface ui-card--radius ui-card--clip" data-faq>
             <div class="faq-question">
               <span>Como funciona a obrigatoriedade do uniforme e o que é o bazar de trocas?</span>
               <div class="faq-toggle">+</div>
@@ -501,14 +507,14 @@
             <h3>Não encontrou sua dúvida?</h3>
             <p>Nossa equipe pedagógica está pronta para responder todas as suas perguntas e agendar uma visita guiada
               pela escola sem compromisso.</p>
-            <a class="faq-cta-btn" href="https://wa.me/5522999999999" target="_blank">
+            <a class="faq-cta-btn ui-cta" href="https://wa.me/5522999999999" target="_blank">
               <img class="cta-whatsapp-icon" src="./src/assets/whatsapp.png" alt="WhatsApp">
               <span>Falar com a equipe</span>
             </a>
           </div>
         </div>
       </div>
-      <div style="text-align:center;">
+      <div class="section-actions">
         <a class="section-more" href="https://wa.me/5522999999999" target="_blank">Saiba mais -></a>
       </div>
     </div>
@@ -536,8 +542,8 @@
             <p>🏛️ <span>CNPJ: 27.795.400/0001-97 </span></p>
             <p>🕐 <span>Seg–Sex: 7h00–17h30</span></p>
           </div>
-          <div style="margin-top:20px;">
-            <a class="btn-cta footer-cta" href="https://wa.me/5522999999999" target="_blank">
+          <div class="section-spacing-top">
+            <a class="btn-cta footer-cta ui-cta" href="https://wa.me/5522999999999" target="_blank">
               <img class="cta-whatsapp-icon" src="./src/assets/whatsapp.png" alt="WhatsApp">
               <span>Agendar Visita</span>
             </a>

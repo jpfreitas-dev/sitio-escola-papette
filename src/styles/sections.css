@@ -14,13 +14,7 @@
   }
 
   & .pilar-card {
-    background: var(--bg);
-    border-radius: var(--radius-lg);
     padding: 36px 28px;
-    border: 1px solid var(--border);
-    transition: all var(--transition);
-    position: relative;
-    overflow: hidden;
   }
 
   & .pilar-card::before {
@@ -152,42 +146,17 @@
     display: flex;
     flex-direction: column;
     height: 100%;
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    position: relative;
-    background: var(--bg-alt);
-    border: 1px solid var(--border);
     cursor: pointer;
   }
 
   & .infra-img {
+    /* Infrastructure photos now come from HTML img elements. */
     width: 100%;
     min-height: 220px;
     aspect-ratio: 16 / 10;
     object-fit: cover;
     display: block;
     transition: transform .6s ease;
-    background: var(--bg-alt);
-  }
-
-  & .infra-card:nth-child(1) .infra-img {
-    background: url('../assets/infraestrutura/campo-de-futebol.png') center/cover;
-  }
-
-  & .infra-card:nth-child(2) .infra-img {
-    background: url('../assets/infraestrutura/horta.jpg') center/cover;
-  }
-
-  & .infra-card:nth-child(3) .infra-img {
-    background: url('../assets/infraestrutura/parquinho.png') center/cover;
-  }
-
-  & .infra-card:nth-child(4) .infra-img {
-    background: url('../assets/infraestrutura/sala-de-artes.png') center/cover;
-  }
-
-  & .infra-card:nth-child(5) .infra-img {
-    background: url('../assets/infraestrutura/sala-de-danca.png') center/cover;
   }
 
   & .infra-card:hover .infra-img {
@@ -369,14 +338,10 @@
   }
 
   & .tech-card {
-    background: var(--bg);
-    border-radius: var(--radius-lg);
     padding: 24px 28px;
     display: flex;
     align-items: center;
     gap: 20px;
-    border: 1px solid var(--border);
-    transition: all .3s;
     cursor: default;
   }
 
@@ -544,6 +509,11 @@
     margin: 0;
   }
 
+  & .bairros-title {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+  }
+
 
   & .bairros-list {
     display: flex;
@@ -641,11 +611,6 @@
   }
 
   & .ativ-card {
-    background: var(--bg);
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    border: 1px solid var(--border);
-    transition: all .35s;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -658,19 +623,9 @@
 
   & .ativ-img {
     height: 180px;
-    background: var(--bg-alt);
-  }
-
-  & .ativ-card:nth-child(1) .ativ-img {
-    background: url('../assets/atividades-complementares/futebol.jpg') center/cover;
-  }
-
-  & .ativ-card:nth-child(2) .ativ-img {
-    background: url('../assets/atividades-complementares/danca-jazz.jpg') center/cover;
-  }
-
-  & .ativ-card:nth-child(3) .ativ-img {
-    background: url('../assets/atividades-complementares/informatica.jpg') center/cover;
+    width: 100%;
+    object-fit: cover;
+    display: block;
   }
 
   & .ativ-body {
@@ -795,11 +750,7 @@
 
   & .depo-card {
     flex: 0 0 calc(33.333% - 16px);
-    background: var(--bg-alt);
-    border-radius: var(--radius-lg);
     padding: 32px;
-    border: 1px solid var(--border);
-    position: relative;
   }
 
   /* decorative quote removed per request */
@@ -934,14 +885,6 @@
     gap: 10px;
   }
 
-  & .faq-item {
-    background: var(--bg);
-    border-radius: var(--radius);
-    border: 1px solid var(--border);
-    overflow: hidden;
-    transition: all .3s;
-  }
-
   & .faq-item.open {
     border-color: var(--yellow);
   }
@@ -990,8 +933,29 @@
   }
 
   & .faq-item.open .faq-answer {
-    max-height: 300px;
+    /* allow larger content when opened; tuned for most screens */
+    max-height: 800px;
     padding: 0 22px 22px;
+  }
+
+  /* Improved readability and overflow handling on very small screens */
+  @media (max-width: 480px) {
+    & .faq-question {
+      padding: 14px 16px;
+    }
+
+    & .faq-answer {
+      padding: 0 16px;
+      /* ensure long words wrap and don't overflow the column */
+      overflow-wrap: break-word;
+      word-break: break-word;
+    }
+
+    & .faq-item.open .faq-answer {
+      /* allow content to expand fully on very small viewports */
+      max-height: 1200px;
+      padding: 8px 16px 18px;
+    }
   }
 
   & .faq-cta-box {
@@ -1014,34 +978,8 @@
   }
 
   & .faq-cta-btn {
-    background: var(--yellow);
-    color: var(--gray-900);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
     font-size: .88rem;
-    font-weight: 600;
     padding: 9px 20px;
-    border-radius: 100px;
-    transition: all .2s;
-    white-space: nowrap;
-    flex-shrink: 0;
-  }
-
-  & .faq-cta-btn .cta-whatsapp-icon {
-    width: 25px;
-    height: 25px;
-    min-width: 25px;
-    min-height: 25px;
-    border-radius: 50%;
-    flex-shrink: 0;
-  }
-
-  & .faq-cta-btn:hover {
-    background: var(--yellow-dark);
-    transform: translateY(-1px);
-    box-shadow: 0 4px 16px rgba(245, 158, 11, .4);
   }
 
   & .faq-cta-action {

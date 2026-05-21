@@ -19,15 +19,19 @@ window.addEventListener('scroll', () => {
 /* ── Hamburger ─────────────────────────────────────────────── */
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
-hamburger.addEventListener('click', () => {
+function toggleMobileMenu() {
   hamburger.classList.toggle('open');
   mobileMenu.classList.toggle('open');
-});
-document.querySelectorAll('.mob-link').forEach(l => {
-  l.addEventListener('click', () => {
-    hamburger.classList.remove('open');
-    mobileMenu.classList.remove('open');
-  });
+}
+
+function closeMobileMenu() {
+  hamburger.classList.remove('open');
+  mobileMenu.classList.remove('open');
+}
+
+hamburger.addEventListener('click', toggleMobileMenu);
+document.querySelectorAll('.mob-link').forEach(link => {
+  link.addEventListener('click', closeMobileMenu);
 });
 
 /* ── Scroll Reveal ─────────────────────────────────────────── */
@@ -43,15 +47,14 @@ const revealObs = new IntersectionObserver((entries) => {
 revealEls.forEach(el => revealObs.observe(el));
 
 /* ── Parallax ──────────────────────────────────────────────── */
-function lerp(a, b, t) { return a + (b - a) * t; }
 const parallaxSections = [
   { banner: document.getElementById('parallax1'), bg: document.getElementById('pb1') },
   { banner: document.getElementById('parallax2'), bg: document.getElementById('pb2') },
   { banner: document.getElementById('parallax3'), bg: document.getElementById('pb3') },
 ];
 let ticking = false;
+
 function updateParallax() {
-  const scrollY = window.scrollY;
   parallaxSections.forEach(({ banner, bg }) => {
     if (!banner || !bg) return;
     const rect = banner.getBoundingClientRect();
@@ -72,10 +75,15 @@ window.addEventListener('scroll', () => {
 updateParallax();
 
 /* ── FAQ Accordion ─────────────────────────────────────────── */
+function closeAllFaqItems() {
+  document.querySelectorAll('[data-faq]').forEach(faq => faq.classList.remove('open'));
+}
+
 document.querySelectorAll('[data-faq]').forEach(item => {
-  item.querySelector('.faq-question').addEventListener('click', () => {
+  const question = item.querySelector('.faq-question');
+  question.addEventListener('click', () => {
     const isOpen = item.classList.contains('open');
-    document.querySelectorAll('[data-faq]').forEach(i => i.classList.remove('open'));
+    closeAllFaqItems();
     if (!isOpen) item.classList.add('open');
   });
 });
@@ -119,13 +127,18 @@ if (track && cards.length) {
 /* ── Smooth active nav link ────────────────────────────────── */
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-links a');
+const navLinkByHref = new Map([...navLinks].map(link => [link.getAttribute('href'), link]));
+
+function setActiveNavLink(activeId) {
+  navLinks.forEach(link => {
+    link.classList.toggle('is-active', link.getAttribute('href') === `#${activeId}`);
+  });
+}
+
 const linkObs = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if (e.isIntersecting) {
-      navLinks.forEach(l => {
-        l.style.color = l.getAttribute('href') === '#' + e.target.id ? 'var(--red)' : '';
-        l.style.background = l.getAttribute('href') === '#' + e.target.id ? 'var(--red-light)' : '';
-      });
+      if (navLinkByHref.has(`#${e.target.id}`)) setActiveNavLink(e.target.id);
     }
   });
 }, { threshold: 0.5 });
