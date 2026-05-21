@@ -220,6 +220,10 @@
   color: var(--red);
 }
 
+.mobile-menu .mob-link+.mob-link {
+  border-top: 2px solid var(--border);
+}
+
 .mobile-menu .btn-cta {
   display: inline-flex;
   align-items: center;
@@ -240,6 +244,7 @@
   .navbar .hamburger {
     display: none;
   }
+
   .navbar .nav-inner {
     padding: 0 24px;
   }

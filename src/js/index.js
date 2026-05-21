@@ -85,33 +85,36 @@ const track = document.getElementById('depoTrack');
 const dots = document.querySelectorAll('.depo-dot');
 let current = 0;
 const cards = document.querySelectorAll('.depo-card');
-let cardW = 0;
-
-function getCardW() {
-  if (!cards[0]) return 0;
-  const gap = parseFloat(getComputedStyle(track).gap) || 24;
-  return cards[0].getBoundingClientRect().width + gap;
-}
 
 function goTo(idx) {
-  cardW = getCardW();
+  if (!track || !cards.length) return;
+
   current = Math.max(0, Math.min(idx, cards.length - 1));
-  track.style.transform = `translateX(-${current * cardW - 5}px)`;
+
+  const activeCard = cards[current];
+  const viewport = track.parentElement;
+  const viewportW = viewport.getBoundingClientRect().width;
+  const cardW = activeCard.getBoundingClientRect().width;
+  const cardOffset = activeCard.offsetLeft;
+  const maxTranslate = Math.max(0, track.scrollWidth - viewportW);
+
+  // Move by exact pixels and keep the active card centered in the visible area.
+  const centeredOffset = cardOffset - (viewportW - cardW) / 2;
+  const translateX = Math.max(0, Math.min(centeredOffset, maxTranslate));
+
+  track.style.transform = `translateX(-${translateX}px)`;
   dots.forEach((d, i) => d.classList.toggle('active', i === current));
 }
 
-document.getElementById('depoPrev').addEventListener('click', () => goTo(current - 1));
-document.getElementById('depoNext').addEventListener('click', () => goTo(current + 1));
-dots.forEach((d, i) => d.addEventListener('click', () => goTo(i)));
-window.addEventListener('resize', () => goTo(current));
-goTo(0);
-
-/* ── Auto-advance carousel ─────────────────────────────────── */
-let autoPlay = setInterval(() => goTo((current + 1) % cards.length), 5000);
-track.parentElement.addEventListener('mouseenter', () => clearInterval(autoPlay));
-track.parentElement.addEventListener('mouseleave', () => {
-  autoPlay = setInterval(() => goTo((current + 1) % cards.length), 5000);
-});
+if (track && cards.length) {
+  const depoPrev = document.getElementById('depoPrev');
+  const depoNext = document.getElementById('depoNext');
+  if (depoPrev) depoPrev.addEventListener('click', () => goTo(current - 1));
+  if (depoNext) depoNext.addEventListener('click', () => goTo(current + 1));
+  dots.forEach((d, i) => d.addEventListener('click', () => goTo(i)));
+  window.addEventListener('resize', () => goTo(current));
+  goTo(0);
+}
 
 /* ── Smooth active nav link ────────────────────────────────── */
 const sections = document.querySelectorAll('section[id]');
