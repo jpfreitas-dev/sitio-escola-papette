@@ -758,33 +758,18 @@
   }
 
   @media (max-width: 768px) {
-
-    /* Mobile: make activities a horizontal snap carousel showing one card at a time */
     & .ativ-grid {
-      display: flex;
-      flex-direction: row;
+      display: grid;
+      grid-template-columns: 1fr;
       gap: 16px;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-      padding: 12px 0;
-    }
-
-    & .ativ-grid::-webkit-scrollbar {
-      display: none;
-    }
-
-    & .ativ-grid {
-      -ms-overflow-style: none;
-      scrollbar-width: none;
+      padding: 0;
     }
 
     & .ativ-card {
-      flex: 0 0 100%;
-      min-width: 100%;
+      width: 100%;
       max-width: 100%;
-      scroll-snap-align: center;
       margin: 0 auto;
+      grid-column: auto;
     }
 
     & .ativ-body {
