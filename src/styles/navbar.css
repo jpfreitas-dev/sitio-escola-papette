@@ -104,13 +104,31 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 10px;
   font-size: .88rem;
   font-weight: 600;
-  padding: 9px 20px;
+  padding: 14px 20px;
   border-radius: 100px;
   transition: all .2s;
   white-space: nowrap;
   flex-shrink: 0;
+}
+
+.navbar .btn-cta .cta-whatsapp-icon,
+.mobile-menu .btn-cta .cta-whatsapp-icon,
+.footer-cta .cta-whatsapp-icon {
+  width: 25px;
+  height: 25px;
+  min-width: 25px;
+  min-height: 25px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.navbar .btn-cta span,
+.mobile-menu .btn-cta span,
+.footer-cta span {
+  line-height: 1;
 }
 
 .navbar .btn-cta:hover {
@@ -203,8 +221,14 @@
 }
 
 .mobile-menu .btn-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
   text-align: center;
   margin-top: 8px;
+  padding: 12px 16px;
+  border-radius: 100px;
 }
 
 /* Desktop: show full nav, hide hamburger */
